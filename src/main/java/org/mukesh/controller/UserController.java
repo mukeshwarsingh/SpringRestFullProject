@@ -10,15 +10,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value="/rest")
+@RequestMapping("/rest")
 public class UserController {
 	
 	@Autowired
 	private UsersService usersService;
 	
-	@RequestMapping(value="/users/{userId}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE )
-	public JsonResponse getUserDetails(@PathVariable("userId") int userId){		
+	@RequestMapping(value="", method=RequestMethod.GET)
+	public JsonResponse getUserDetails(){		
 		
+		int userId = 1;
 		return usersService.getUserDetails(userId);
 	}
 
