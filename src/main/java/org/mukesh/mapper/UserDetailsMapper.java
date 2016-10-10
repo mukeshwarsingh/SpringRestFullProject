@@ -9,9 +9,9 @@ import org.springframework.jdbc.core.RowMapper;
 
 public class UserDetailsMapper implements RowMapper<UserDetails> {
 
-	@Override
 	public UserDetails mapRow(ResultSet result, int rownum) throws SQLException {
 		// TODO Auto-generated method stub
+		
 		
 		int actorId = result.getInt("actor_id");
 		String firstName = result.getString("first_name");
@@ -19,8 +19,8 @@ public class UserDetailsMapper implements RowMapper<UserDetails> {
 		Date date = result.getDate("last_update");
 		
 		UserDetails userDetails = new UserDetails(actorId, firstName, lastName, date);
-		
 		return userDetails;
 	}
 
+	
 }
