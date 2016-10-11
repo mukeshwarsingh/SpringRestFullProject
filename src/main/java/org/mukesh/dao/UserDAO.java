@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
-@Repository("userDAO")
+@Repository("userDao")
 public class UserDAO extends JdbcDaoSupport implements IUserDAO {
 
 	@Autowired
