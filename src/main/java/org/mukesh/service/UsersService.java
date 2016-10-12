@@ -29,8 +29,9 @@ public class UsersService implements IUsersService {
 		userDetails = userDao.getUserDetails(actorId);
 		
 		jresponse = JsonResponse.instance(Response.Status.OK.getStatusCode(),
-				"wrong details",
-				"wrong details", userDetails);
+				"correct details",
+				"correct details", userDetails);
+		
 		
 		return jresponse;
 	}
