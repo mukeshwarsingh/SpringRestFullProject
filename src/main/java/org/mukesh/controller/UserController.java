@@ -13,13 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 	
 	@Autowired
-	private UsersService usersService;
+	UsersService usersService;
 	
 	@RequestMapping(value="", method=RequestMethod.GET)
-	public JsonResponse getUserDetails(){		
+	public String getUserDetails(){		
 		
 		int userId = 1;
-		return usersService.getUserDetails(userId);
+		
+		return "Hello World!!!";
+		//return usersService.getUserDetails(userId);
 	}
 
 }
