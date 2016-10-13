@@ -11,7 +11,7 @@
     http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	
 	<context:component-scan base-package="org.mukesh.dao, org.mukesh.service,
-	  org.mukesh.controller,org.mukesh.dto" />
+	  org.mukesh.controller,org.mukesh.dto, org.mukesh.swagger" />
 	  
 	  <context:annotation-config />
 	  
@@ -21,7 +21,7 @@
 		<property name="dataSource" ref="dataSource"></property>  
 	</bean>  
 	
-	<bean id="jacksonMessageConverter"
+	<!-- <bean id="jacksonMessageConverter"
 		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
 		
 	<bean
@@ -31,25 +31,36 @@
 				<ref bean="jacksonMessageConverter" />
 			</list>
 		</property>
-	</bean>
+	</bean> -->
 	
 	<mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/" />
 	<mvc:resources mapping="/webjars/**"
 		location="classpath:/META-INF/resources/webjars/" />
 		
-	<bean name="/SwaggerConfig" class="org.mukesh.swagger.SwaggerConfig" />
+		<!-- <mvc:default-servlet-handler/> -->
+	<!--  <bean name="/SwaggerConfig" class="org.mukesh.swagger.SwaggerConfig" />  -->
 	
 	<bean id="userDao" class="org.mukesh.dao.UserDAO">  
 		<property name="jdbcTemplate" ref="jdbcTemplate"></property>  
 	</bean>  
 	
 	
+	 <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+         <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>  
+                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>              
+            </props>
+        </property>        
+    </bean>
+    	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/sakila" />
+		<property name="url" value="jdbc:mysql://localhost:3306/dblms" />
 		<property name="username" value="root" />
-		<property name="password" value="mukesh2016$" />
-	
+		<property name="password" value="root" />	
 	</bean>
-
 </beans>

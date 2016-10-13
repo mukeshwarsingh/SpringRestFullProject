@@ -2,6 +2,7 @@ package org.mukesh.dao;
 
 import java.util.Date;
 
+import org.hibernate.SessionFactory;
 import org.mukesh.dto.UserDetails;
 import org.mukesh.mapper.UserDetailsMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class UserDAO extends JdbcDaoSupport implements IUserDAO {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 	
+	@Autowired
+	SessionFactory sessionFactory;
+	
 	public UserDetails getUserDetails(int actorId) {
 		// TODO Auto-generated method stub
 		UserDetails userDetails;
@@ -23,6 +27,14 @@ public class UserDAO extends JdbcDaoSupport implements IUserDAO {
 		//userDetails = getJdbcTemplate().queryForObject("select * from sakila.actor where actor_id=?", new Object[]{actorId}, new UserDetailsMapper());
 		
 		return userDetails;
+	}
+	
+	public int saveUserDetails(UserDetails userDetails) {
+		// TODO Auto-generated method stub
+		
+		int actoryId = (int)sessionFactory.getCurrentSession().save(userDetails);
+		
+		return actoryId;
 	}
 
 	

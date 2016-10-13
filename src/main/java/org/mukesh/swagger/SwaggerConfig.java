@@ -23,16 +23,17 @@ public class SwaggerConfig {
             .apis(RequestHandlerSelectors.any())
             //.paths(PathSelectors.regex("/api/.*"))
             .build()
-            .pathMapping("/api/")
+            //.pathMapping("/api/")
             .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("TITLE")
-            .description("DESCRIPTION")
-            .version("VERSION")
-            .termsOfServiceUrl("http://terms-of-services.url")
+            .title("SpringRestFull Project")
+            .description("Sample Project for Spring RESTFULL Web Services")
+            .version("VERSION 1.0")
+            .termsOfServiceUrl("Terms of Service URL")
+            .contact("mukeshwar.singh@ingramcontent.com")
             .license("LICENSE")
             .licenseUrl("http://url-to-license.com")
             .build();

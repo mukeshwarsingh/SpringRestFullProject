@@ -35,5 +35,17 @@ public class UsersService implements IUsersService {
 		
 		return jresponse;
 	}
+	
+	public JsonResponse saveUserDetails(UserDetails userDetails) {
+		// TODO Auto-generated method stub
+		JsonResponse jresponse = null;
+		int userId = userDao.saveUserDetails(userDetails);
+		
+		jresponse = JsonResponse.instance(Response.Status.OK.getStatusCode(),
+				"correct details",
+				"correct details", userId);
+		
+		return jresponse;
+	}
 
 }
