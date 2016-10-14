@@ -4,17 +4,16 @@ import java.util.Date;
 
 import org.hibernate.SessionFactory;
 import org.mukesh.dto.UserDetails;
-import org.mukesh.mapper.UserDetailsMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository("userDao")
-public class UserDAO extends JdbcDaoSupport implements IUserDAO {
+@Transactional
+public class UserDAO implements IUserDAO {
 
-	@Autowired
-	JdbcTemplate jdbcTemplate;
+	/*@Autowired
+	JdbcTemplate jdbcTemplate;*/
 	
 	@Autowired
 	SessionFactory sessionFactory;
