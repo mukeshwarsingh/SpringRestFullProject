@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -35,6 +34,13 @@ public class UserController {
 	
 	@RequestMapping(value="/", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 	public JsonResponse saveUserDetails(@RequestBody UserDetails userDetails){		
+		
+		JsonResponse jresponse = usersService.saveUserDetails(userDetails);
+		return jresponse;
+	}
+	
+	@RequestMapping(value="/", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
+	public JsonResponse savetestDetails(@RequestBody UserDetails userDetails){		
 		
 		JsonResponse jresponse = usersService.saveUserDetails(userDetails);
 		return jresponse;
