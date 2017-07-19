@@ -26,8 +26,12 @@ public class UserController {
 	@RequestMapping(value="/{userId}", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value = "get user details")
 	public JsonResponse getUserDetails(@ApiParam(name="userId", value="user's Id for details to be fetched", required= true)@PathVariable("userId") int userId){		
+<<<<<<< HEAD
 		
 		System.out.println("2nd local test Changes in controller class");
+=======
+		System.out.println("2nd direct origin Changes in controller class");
+>>>>>>> refs/remotes/origin/test
 		System.out.println("Direct origin Changes in controller class");
 		System.out.println("Changes in controller class");	
 		System.out.println("Changes of test branch...");
