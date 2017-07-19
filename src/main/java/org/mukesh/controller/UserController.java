@@ -27,8 +27,11 @@ public class UserController {
 	@ApiOperation(value = "get user details")
 	public JsonResponse getUserDetails(@ApiParam(name="userId", value="user's Id for details to be fetched", required= true)@PathVariable("userId") int userId){		
 		
+
 		System.out.println("Changes in controller class");	
 		System.out.println("Changes of test branch...");
+		System.out.println("In a process to create another branch...");		
+
 		JsonResponse jresponse = usersService.getUserDetails(userId);
 		return jresponse;
 	}
