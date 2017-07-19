@@ -30,7 +30,9 @@ public class UserController {
 
 		System.out.println("Changes in controller class");	
 		System.out.println("Changes of test branch...");
-		System.out.println("In a process to create another branch...");		
+		System.out.println("In a process to create another branch...");
+		
+		System.out.println("2 commit and push in test branch, merge of local develop branch");
 
 		JsonResponse jresponse = usersService.getUserDetails(userId);
 		return jresponse;
