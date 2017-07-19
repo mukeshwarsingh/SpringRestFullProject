@@ -28,7 +28,9 @@ public class UserController {
 	public JsonResponse getUserDetails(@ApiParam(name="userId", value="user's Id for details to be fetched", required= true)@PathVariable("userId") int userId){		
 		
 		System.out.println("Changes in controller class");
-		System.out.println("In a process to create another branch...");		
+		System.out.println("In a process to create another branch...");	
+		
+		System.out.println("local develop branch commit without push to orgin develop");
 		JsonResponse jresponse = usersService.getUserDetails(userId);
 		return jresponse;
 	}
