@@ -27,7 +27,8 @@ public class UsersService implements IUsersService {
 		// TODO Auto-generated method stub
 		JsonResponse jresponse = null;
 		userDetails = userDao.getUserDetails(actorId);
-		
+		System.out.println("local develop branch commit");
+				
 		jresponse = JsonResponse.instance(Response.Status.OK.getStatusCode(),
 				"correct details",
 				"correct details", userDetails);
