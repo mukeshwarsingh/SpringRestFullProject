@@ -33,6 +33,7 @@ public class UserController {
 		System.out.println("2 commit and push in test branch, merge of local develop branch");
 	
 		System.out.println("local develop branch commit without push to orgin develop");
+		System.out.println("2nd origing/develop commit and push");
 
 		JsonResponse jresponse = usersService.getUserDetails(userId);
 		return jresponse;
