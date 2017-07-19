@@ -31,6 +31,8 @@ public class UserController {
 		System.out.println("In a process to create another branch...");	
 		
 		System.out.println("local develop branch commit without push to orgin develop");
+		
+		System.out.println("2nd origing/develop commit and push");
 		JsonResponse jresponse = usersService.getUserDetails(userId);
 		return jresponse;
 	}
